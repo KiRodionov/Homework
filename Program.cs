@@ -5,9 +5,11 @@ CD newSong3= new CD("Title3", "Artist3", 1922);
 CD newSong4 = new CD("Title4", "Artist4", 2010);
 CD song = new CD();
 
+Console.WriteLine();
+
 List<CD> list = CD.CreateCdList(newSong1, newSong2, newSong3, newSong4, song);
 
-Console.WriteLine("Non Sorted List\n");
+Console.WriteLine("Не сортированный список компакт-дисков\n");
 foreach (CD cd in list)
 {
     cd.PrintInfo();
@@ -16,7 +18,7 @@ foreach (CD cd in list)
 
 List<CD> sorted = CD.YearOfReleaseSort(list);
 
-Console.WriteLine("Sorted List\n");
+Console.WriteLine("Сортированный список компакт-дисков\n");
 foreach (CD cd in sorted)
 {
     cd.PrintInfo();
@@ -27,3 +29,7 @@ Console.WriteLine("Поиск компакт-дисков по названию 
 CD.CdArtistSearch(list, "Artist1");
 Console.WriteLine();
 CD.CdNameSearch(list, "Title3");
+Console.WriteLine();
+
+Console.WriteLine("Количество компакт-дисков выпущенных после 2000 года");
+Console.WriteLine(CD.CountDiscsReleasedAfterYear(list, 2000));
